@@ -3,6 +3,7 @@ services:
   - type: web
     name: gadgeto-backend
     runtime: python
+    region: oregon  # or singapore for closer to India
     plan: free  # Change to 'starter' or higher for production
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
@@ -17,7 +18,7 @@ services:
         value: 30
       - key: GOOGLE_CLIENT_ID
         sync: false  # Set this manually in Render dashboard
-    healthCheckPath: /
+    healthCheckPath: /docs
     autoDeploy: true
 
   # PostgreSQL Database (Optional - for production)
