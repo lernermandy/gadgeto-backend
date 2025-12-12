@@ -14,6 +14,6 @@ class Settings:
     UPI_NAME = "mandar jadhav"
     GOOGLE_CLIENT_ID = "95703734000-5g9099b15uh4md9hav06ppe6mvj8apvd.apps.googleusercontent.com"
     GOOGLE_CLIENT_SECRET = "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"
-    GOOGLE_REDIRECT_URI = os.environ.get("GOOGLE_REDIRECT_URI", "http://127.0.0.1:8001/auth/google/callback")
+    GOOGLE_REDIRECT_URI = os.environ.get("GOOGLE_REDIRECT_URI", "https://gadgeto.vercel.app/auth/google/callback")
 
 settings = Settings()
