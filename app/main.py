@@ -43,11 +43,11 @@ if FRONTEND_DIR.exists():
 def root():
     return RedirectResponse(url="/web/index.html")
 
+from .core.config import settings
+
 @app.get("/auth/google-client-id")
 def get_google_client_id():
-    import os
-    client_id = os.getenv("GOOGLE_CLIENT_ID")
-    return {"client_id": client_id}
+    return {"client_id": settings.GOOGLE_CLIENT_ID}
 
 @app.get("/@vite/client")
 def vite_client_stub():
