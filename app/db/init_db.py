@@ -21,25 +21,37 @@ def seed_demo_user():
 def seed_products():
     db = SessionLocal()
     try:
-        count = db.query(Product).count()
-        if count == 0:
-            data = [
-                {"sku": "EGWHC171", "name": "Walk-In Humidity Chamber – EGWHC171", "category": "Stability Chamber", "capacity_litres": 4500, "temperature_range": "10°C – 85°C", "humidity_range": "20% – 95% RH", "price": 650000.0, "image_url": "/web/assets/images/EGWHC171.svg"},
-                {"sku": "EGPGC4500", "name": "Walk-In Plant Growth Chamber", "category": "Growth Chamber", "capacity_litres": 4500, "temperature_range": "Configurable", "humidity_range": "Available", "price": 720000.0, "image_url": "/web/assets/images/EGPGC4500.svg"},
-                {"sku": "EGWCC190", "name": "Booster Cooling Walk-In Chamber – EGWCC190", "category": "Cooling Chamber", "capacity_litres": 5400, "temperature_range": "2°C – 8°C", "price": 580000.0, "image_url": "/web/assets/images/EGWCC190.svg"},
-                {"sku": "EGWIC190", "name": "Walk-In Incubator Chamber – EGWIC190", "category": "Incubator", "capacity_litres": 5400, "temperature_range": "+5°C – 75°C", "price": 420000.0, "image_url": "/web/assets/images/EGWIC190.svg"},
-                {"sku": "EGHC7S/M", "name": "Humidity Stability Chamber – EGHC7S/M", "category": "Stability Chamber", "capacity_litres": 200, "temperature_range": "10°C – 60°C", "humidity_range": "40% – 95% RH", "price": 140000.0, "image_url": "/web/assets/images/EGHC7S-M.svg"},
-                {"sku": "EGBI7S/M", "name": "BOD Incubator Chamber – EGBI7S/M", "category": "Incubator", "capacity_litres": 200, "temperature_range": "+5°C – 60°C", "price": 125000.0},
-                {"sku": "EGCC7S/M", "name": "Cooling Chamber – EGCC7S/M", "category": "Cooling Chamber", "capacity_litres": 200, "temperature_range": "2°C – 8°C", "price": 175000.0},
-                {"sku": "EGFTC7S/M", "name": "Freeze-Thaw Chamber – EGFTC7S/M", "category": "Freeze & Thermal Cycle Testing", "capacity_litres": 200, "temperature_range": "−30°C to +70°C", "price": 295000.0},
-                {"sku": "EGLI7S/M", "name": "Lab Incubator – EGLI7S/M", "category": "Incubator", "capacity_litres": 200, "temperature_range": "Ambient +5°C to 75°C", "price": 110000.0},
-                {"sku": "EGDF7S/M", "name": "Deep Freezer Chamber – EGDF7S/M", "category": "Deep Freezer", "capacity_litres": 200, "temperature_range": "−30°C to −5°C", "price": 220000.0},
-                {"sku": "SAMSUNG-S24-FE-BLUE", "name": "Samsung Galaxy S24 FE 5G (Blue, 128 GB) (8 GB RAM)", "category": "Mobile Phone", "price": 31999.0, "battery_capacity": "4700 mAh", "primary_camera": "50MP + 12MP", "image_url": "/web/assets/images/samsung-s24-fe.png"},
-            ]
-            for p in data:
+        # Updated data list with correct path for Vercel
+        data = [
+            {"sku": "EGWHC171", "name": "Walk-In Humidity Chamber – EGWHC171", "category": "Stability Chamber", "capacity_litres": 4500, "temperature_range": "10°C – 85°C", "humidity_range": "20% – 95% RH", "price": 650000.0, "image_url": "assets/images/EGWHC171.svg"},
+            {"sku": "EGPGC4500", "name": "Walk-In Plant Growth Chamber", "category": "Growth Chamber", "capacity_litres": 4500, "temperature_range": "Configurable", "humidity_range": "Available", "price": 720000.0, "image_url": "assets/images/EGPGC4500.svg"},
+            {"sku": "EGWCC190", "name": "Booster Cooling Walk-In Chamber – EGWCC190", "category": "Cooling Chamber", "capacity_litres": 5400, "temperature_range": "2°C – 8°C", "price": 580000.0, "image_url": "assets/images/EGWCC190.svg"},
+            {"sku": "EGWIC190", "name": "Walk-In Incubator Chamber – EGWIC190", "category": "Incubator", "capacity_litres": 5400, "temperature_range": "+5°C – 75°C", "price": 420000.0, "image_url": "assets/images/EGWIC190.svg"},
+            {"sku": "EGHC7S/M", "name": "Humidity Stability Chamber – EGHC7S/M", "category": "Stability Chamber", "capacity_litres": 200, "temperature_range": "10°C – 60°C", "humidity_range": "40% – 95% RH", "price": 140000.0, "image_url": "assets/images/EGHC7S-M.svg"},
+            {"sku": "EGBI7S/M", "name": "BOD Incubator Chamber – EGBI7S/M", "category": "Incubator", "capacity_litres": 200, "temperature_range": "+5°C – 60°C", "price": 125000.0},
+            {"sku": "EGCC7S/M", "name": "Cooling Chamber – EGCC7S/M", "category": "Cooling Chamber", "capacity_litres": 200, "temperature_range": "2°C – 8°C", "price": 175000.0},
+            {"sku": "EGFTC7S/M", "name": "Freeze-Thaw Chamber – EGFTC7S/M", "category": "Freeze & Thermal Cycle Testing", "capacity_litres": 200, "temperature_range": "−30°C to +70°C", "price": 295000.0},
+            {"sku": "EGLI7S/M", "name": "Lab Incubator – EGLI7S/M", "category": "Incubator", "capacity_litres": 200, "temperature_range": "Ambient +5°C to 75°C", "price": 110000.0},
+            {"sku": "EGDF7S/M", "name": "Deep Freezer Chamber – EGDF7S/M", "category": "Deep Freezer", "capacity_litres": 200, "temperature_range": "−30°C to −5°C", "price": 220000.0},
+            {"sku": "SAMSUNG-S24-FE-BLUE", "name": "Samsung Galaxy S24 FE 5G (Blue, 128 GB) (8 GB RAM)", "category": "Mobile Phone", "price": 31999.0, "battery_capacity": "4700 mAh", "primary_camera": "50MP + 12MP", "image_url": "assets/images/samsung-s24.jpg"},
+        ]
+
+        # Always upsert products to ensure data is correct
+        for p in data:
+            existing = db.query(Product).filter(Product.sku == p["sku"]).first()
+            if existing:
+                existing.name = p["name"]
+                existing.category = p["category"]
+                existing.price = p["price"]
+                existing.image_url = p.get("image_url")
+                existing.battery_capacity = p.get("battery_capacity")
+                existing.primary_camera = p.get("primary_camera")
+                # Update other fields if necessary
+            else:
                 prod = Product(**p)
                 prod.stock = 10
                 db.add(prod)
+        
         db.commit()
     finally:
         db.close()
