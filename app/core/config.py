@@ -10,8 +10,8 @@ class Settings:
     CASHFREE_APP_ID = os.environ.get("CASHFREE_APP_ID", "")
     CASHFREE_SECRET_KEY = os.environ.get("CASHFREE_SECRET_KEY", "")
     CASHFREE_ENV = os.environ.get("CASHFREE_ENV", "sandbox")
-    UPI_VPA = os.environ.get("UPI_VPA", "jmandar0707@okhdfcbank")
-    UPI_NAME = os.environ.get("UPI_NAME", "mandar jadhav")
+    UPI_VPA = "jmandar0707@okhdfcbank"
+    UPI_NAME = "mandar jadhav"
     GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
     GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
     GOOGLE_REDIRECT_URI = os.environ.get("GOOGLE_REDIRECT_URI", "http://127.0.0.1:8001/auth/google/callback")

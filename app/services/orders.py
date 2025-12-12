@@ -33,8 +33,8 @@ class OrderService:
         if payment_method == "online":
             # Generate UPI Payment Link
             # format: upi://pay?pa={merchant_upi}&pn={merchant_name}&am={amount}&cu=INR&tn={transaction_note}
-            merchant_upi = "merchant@upi"
-            merchant_name = "Ecommerce Store"
+            merchant_upi = "jmandar0707@okhdfcbank"
+            merchant_name = "mandar jadhav"
             transaction_note = f"Order #{order.id}"
             amount_str = f"{total:.2f}"
             order.upi_payment_link = f"upi://pay?pa={merchant_upi}&pn={merchant_name}&am={amount_str}&cu=INR&tn={transaction_note}"
